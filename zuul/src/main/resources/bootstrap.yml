@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: evan-zuul
+  profiles:
+    active: single
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: evan-config
+      profile: dev-local
+
+---
+spring:
+  profiles: single
+server:
+  port: 8011
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8001/eureka/
+
+---
+spring:
+  profiles: ha-8012
+
+server:
+  port: 8012
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8002/eureka/
+
+---
+spring:
+  profiles: ha-8013
+
+server:
+  port: 8013
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8003/eureka/

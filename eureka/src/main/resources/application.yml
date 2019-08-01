@@ -1,14 +1,48 @@
-server:
-  port: 8001 # 指定该Eureka实例的端口
-
 spring:
   application:
     name: evan-eureka
+  profiles:
+    active: single
 
 eureka:
+  server:
+    enable-self-preservation: false #关闭保护机制
   instance:
     hostname: 127.0.0.1
-    enable-self-preservation: false # 关闭保护机制
+    prefer-ip-address: true
+
+---
+spring:
+  profiles: single
+server:
+  port: 8001
+
+eureka:
   client:
-    registerWithEureka: false  #默认true，如果是集群，无需配置
-    fetchRegistry: false  #默认true，如果是集群，无需配置
+    registerWithEureka: false
+    fetchRegistry: false
+
+
+---
+spring:
+  profiles: ha-8002
+
+server:
+  port: 8002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8003/eureka/
+
+---
+spring:
+  profiles: ha-8003
+
+server:
+  port: 8003
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8002/eureka/

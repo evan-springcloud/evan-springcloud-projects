@@ -3,9 +3,9 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <contextName>evan-spring-cloud</contextName>
- <!--   <property name="LOG_DIR" value="/mizhi-btbs/log" />-->
-    <property name="LOG_DIR" value="${LOG_DIR}" />
-    <appender  name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!--   <property name="LOG_DIR" value="/mizhi-btbs/log" />-->
+    <property name="LOG_DIR" value="${LOG_DIR}"/>
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${LOG_DIR}/main.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_DIR}/main-%d{yyyyMMdd}.log.%i</fileNamePattern>
@@ -16,7 +16,7 @@
         </rollingPolicy>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>%date{yy-MM-dd HH:mm:ss} %level [%thread] %msg %logger{16} %n</Pattern>
-<!--            %-60caller{1}-->
+            <!--            %-60caller{1}-->
         </layout>
     </appender>
 
