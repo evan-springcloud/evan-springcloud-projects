@@ -10,37 +10,43 @@ spring:
         service-id: evan-config
       #profile: dev-local
 
----
-spring:
-  profiles: single
-server:
-  port: 8021
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8001/eureka/
+      defaultZone: http://127.0.0.1:8001/eureka/,http://127.0.0.1:8002/eureka/,http://127.0.0.1:8003/eureka/
 
----
-spring:
-  profiles: ha-8012
-
-server:
-  port: 8022
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8002/eureka/
-
----
-spring:
-  profiles: ha-8013
-
-server:
-  port: 8023
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8003/eureka/
+#
+#---
+#spring:
+#  profiles: single
+#server:
+#  port: 8021
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://127.0.0.1:8001/eureka/
+#
+#---
+#spring:
+#  profiles: ha-8012
+#
+#server:
+#  port: 8022
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8002/eureka/
+#
+#---
+#spring:
+#  profiles: ha-8013
+#
+#server:
+#  port: 8023
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8003/eureka/
