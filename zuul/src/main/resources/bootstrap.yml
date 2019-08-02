@@ -8,7 +8,7 @@ spring:
       discovery:
         enabled: true
         service-id: evan-config
-      profile: dev-local
+      #profile: dev-local
 
 ---
 spring:

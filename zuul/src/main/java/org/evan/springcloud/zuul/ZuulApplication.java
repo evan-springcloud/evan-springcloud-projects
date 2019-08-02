@@ -5,6 +5,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * 网关
@@ -13,6 +14,9 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  */
 @SpringBootApplication
 @EnableZuulProxy
+@ComponentScan(basePackages = {
+        "org.evan.springcloud.zuul.api",
+})
 public class ZuulApplication {
     public static void main(String[] args) {
         String logDir = System.getProperty("LOG_DIR");
