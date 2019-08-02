@@ -14,7 +14,7 @@ spring:
 spring:
   profiles: single
 server:
-  port: 8011
+  port: 8021
 
 eureka:
   client:
@@ -26,7 +26,7 @@ spring:
   profiles: ha-8012
 
 server:
-  port: 8012
+  port: 8022
 
 eureka:
   client:
@@ -38,7 +38,7 @@ spring:
   profiles: ha-8013
 
 server:
-  port: 8013
+  port: 8023
 
 eureka:
   client:
