@@ -1,8 +1,8 @@
 spring:
-  application:
-    name: evan-zuul
   profiles:
     active: single
+  application:
+    name: evan-zuul
   cloud:
     config:
       discovery:
