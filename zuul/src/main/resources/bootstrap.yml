@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: single
+    active: 8021
   application:
     name: evan-zuul
   cloud:
