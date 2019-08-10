@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.evan</groupId>
-        <artifactId>evan-parent</artifactId>
+        <groupId>org.evan.springcloud</groupId>
+        <artifactId>evan-springcloud-projects</artifactId>
         <version>1.0</version>
     </parent>
 
